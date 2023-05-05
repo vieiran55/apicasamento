@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 // aqui vamos configurar o modelo das requisições ao banco, lembrado que devem ser configuradas de acordo com o que está no banco
 const listaDePresentesSchema = new mongoose.Schema({
   id: String,
-  titulo: String,
+  title: String,
   link: String,
   photo: String,
   status: String,

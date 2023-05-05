@@ -6,7 +6,10 @@ import listaDePresentesController from "../controllers/listaDePresentesControlle
 const router = express.Router();
 
 // no router do Express, colocamos no primeiro parameto como o collection do banco. o seundo paramentro é o cotrolador+verbo
-router.get("/listadepresentes", listaDePresentesController.listarPresentes);
+router
+  .get("/listadepresentes", listaDePresentesController.listarPresentes)
+  .post("/listadepresentes", listaDePresentesController.cadastrarPresente)
+  .delete("/listadepresentes/:id", listaDePresentesController.excluirPresente)
 
 //aqui exportamos essa rota que pode ser utilizada no arquivo index.
 export default router;

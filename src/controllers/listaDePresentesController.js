@@ -1,4 +1,4 @@
-//importamos o modelo que queremos utilizar 
+//importamos o modelo que queremos utilizar
 import ListaDePresentes from "../models/ListaDePresentes.js";
 
 // vamos criar a classe controle para este modelo
@@ -8,17 +8,43 @@ class listaDePresentesController {
   static listarPresentes = (req, res) => {
     // aqui recebemos o modelo e passamos as function
     ListaDePresentes
-    .find()
-    .exec()
-    //faremos aqui a promisse
-    .then(listadepresentes => {
-      res.status(200).json(listadepresentes)
+      .find()
+      .exec()
+      //faremos aqui a promisse
+      .then((listadepresentes) => {
+        res.status(200).json(listadepresentes);
       })
-    .catch(err => {
-      console.log(err);
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  static cadastrarPresente = (req, res) => {
+    let presente = new ListaDePresentes(req.body);
+    presente
+    .save()
+    .then((listadepresentes) => {
+      res.status(200).json(listadepresentes);
+    })
+    .catch((err) => {
+      res
+      .status(500)
+      .send({mensagem: `${err.mensagem} - falha ao cadastrar o presente`});
     });
   };
-};
+
+  static excluirPresente = (req, res) =>{
+    const id = req.params.id;
+
+    ListaDePresentes.findByIdAndDelete(id)
+    .then((listadepresentes) => {
+      res.status(200).send({ mensagem: "Presente removido com sucesso "});
+    })
+    .catch((err) => {
+      res.status(500).send({ mensagem: err.mensagem})
+    })
+  }
+}
 
 //aqui vamos exportar o controller para aplicação
 export default listaDePresentesController;
