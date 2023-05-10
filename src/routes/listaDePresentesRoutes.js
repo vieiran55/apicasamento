@@ -9,6 +9,7 @@ const router = express.Router();
 router
   .get("/listadepresentes", listaDePresentesController.listarPresentes)
   .post("/listadepresentes", listaDePresentesController.cadastrarPresente)
+  .put("/listadepresentes/:id", listaDePresentesController.atualizarPresente)
   .delete("/listadepresentes/:id", listaDePresentesController.excluirPresente)
 
 //aqui exportamos essa rota que pode ser utilizada no arquivo index.
