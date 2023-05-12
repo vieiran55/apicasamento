@@ -1,4 +1,3 @@
-//importamos o modelo que queremos utilizar
 import ListaDePresentes from "../models/ListaDePresentes.js";
 
 // vamos criar a classe controle para este modelo

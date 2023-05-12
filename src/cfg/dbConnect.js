@@ -4,7 +4,8 @@ import mongoose from "mongoose";
 // passamos o mogoose mais a forma de conexão
 
 //conexão com o banco local
-mongoose.connect("mongodb://127.0.0.1:27017/alura-node");
+//alterar mongod.conf acrescentar bindIp: 10.1.48.196,127.0.0.1 e tambem liberar a porta 27017
+mongoose.connect("mongodb://10.1.48.196:27017/alura-node");
 
 //conexão com o banco no Atlas
 //mongoose.connect("mongodb+srv://alura:15911@cluster0.bbho8n.mongodb.net/alura-node?retryWrites=true&w=majority");

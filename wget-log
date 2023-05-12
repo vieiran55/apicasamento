@@ -1,0 +1,6 @@
+--2023-05-11 11:04:12--  https://www.mongodb.org/static/pgp/server-5.0.asc
+Resolvendo www.mongodb.org (www.mongodb.org)... 52.206.222.245, 52.21.89.200, 54.175.147.155
+Conectando-se a www.mongodb.org (www.mongodb.org)|52.206.222.245|:443... conectado.
+ERRO: não foi possível verificar o certificado de www.mongodb.org, emitido por ‘C=BR,ST=DF,L=Brasil,OU=REGBSA,O=SERPRO,CN=Filtro de conteudo’:
+  Foi encontrado um certificado auto-assinado.
+Para se conectar a www.mongodb.org de forma insegura, use "--no-check-certificate".

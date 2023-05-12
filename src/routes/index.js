@@ -4,6 +4,7 @@ import express from 'express';
 
 // aqui importamos a segunda rota ou mais rotas que serão filhas desta
 import listaDePresentes from "./listaDePresentesRoutes.js";
+import listaDePresencas from './listaDePresencasRoutes.js';
 
 //criamos uma variavel para receber os paramentros
 const routes = (app) =>{
@@ -14,7 +15,7 @@ const routes = (app) =>{
   });
 
   // // aqui vamos configurar para que as requisições em formato JSON para as rotas filhas
-  app.use(express.json(), listaDePresentes);
+  app.use(express.json(), listaDePresencas, listaDePresentes);
   // aqui seria como em um servidor html onde ficam os aquivos publicos, é importante manter essa linha.
   app.use(express.static("public"));
 }
