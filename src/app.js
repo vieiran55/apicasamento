@@ -6,6 +6,7 @@ import db from "./cfg/dbConnect.js";
 import routes from "./routes/index.js"
 // ferramenta para permitir ao servidor node que receba solicitações
 import cors from "cors";
+
 // aqui eu crio uma constante que vai receber a base do express
 const app = express()
 // como importamos a conexão do banco vamos configurar a sua utilização.
@@ -21,6 +22,7 @@ app.use(express.json());
 // aqui colocamos o express para se conectar com as rotas
 routes(app);
 // com o app configurado, vamos exporta-lo para ser utilizado em toda a aplicação.
+
 export default app;
 
 

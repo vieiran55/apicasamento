@@ -28,7 +28,7 @@ class convidadosController {
         res
           .status(500)
           .send({
-            mensagem: `${err.mensagem} - falha ao cadastrar o presente`,
+            mensagem: `${err.mensagem} - falha ao cadastrar convidado`,
           });
       });
   };
@@ -42,11 +42,11 @@ class convidadosController {
       if (!convidados) {
         return res.status(404).send({ message: "Registro não encontrado" });
       }
-      res.status(200).json({ message: "Presente atualizado com sucesso" });
+      res.status(200).json({ message: "convidado atualizado com sucesso" });
     })
     .catch((err) => {
       res.status(500).send({
-        mensagem: `${err.mensagem} - falha ao atualizar o presente`,
+        mensagem: `${err.mensagem} - falha ao atualizar o convidado`,
       });
     });
 }

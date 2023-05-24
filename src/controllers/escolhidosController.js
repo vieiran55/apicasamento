@@ -30,7 +30,7 @@ static cadastrarEscolhidos = (req, res) => {
       res
         .status(500)
         .send({
-          mensagem: `${err.mensagem} - falha ao cadastrar o presente`,
+          mensagem: `${err.mensagem} - falha ao cadastrar o presente escolhido`,
         });
     });
 };

@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 //mongoose.connect("mongodb://10.1.48.196:27017/alura-node");
 
 //conexão com o banco no Atlas
-mongoose.connect("mongodb+srv://alura:15911@cluster0.bbho8n.mongodb.net/alura-node?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://alura:159118@cluster0.bbho8ne.mongodb.net/alura-node?retryWrites=true&w=majority");
 
 // vamos encapsular essa conexão em uma variavel
 let db = mongoose.connection;
