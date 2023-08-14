@@ -1,4 +1,4 @@
-import Escolhidos from "../models/Escolhidos.js";
+import Escolhidos from "../../models/gabieantonio/Escolhidos.js";
 
 class escolhidosController {
 

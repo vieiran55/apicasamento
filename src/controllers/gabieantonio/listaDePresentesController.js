@@ -1,4 +1,4 @@
-import ListaDePresentes from "../models/ListaDePresentes.js";
+import ListaDePresentes from "../../models/gabieantonio/ListaDePresentes.js";
 
 // vamos criar a classe controle para este modelo
 class listaDePresentesController {

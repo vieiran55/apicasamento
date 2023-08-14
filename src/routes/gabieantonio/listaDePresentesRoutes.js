@@ -1,6 +1,6 @@
 import express from "express";
 // importamos o controlador
-import listaDePresentesController from "../controllers/listaDePresentesController.js";
+import listaDePresentesController from "../../controllers/gabieantonio/listaDePresentesController.js";
 
 // criamos uma variavel local para receber o Router do Express
 const router = express.Router();

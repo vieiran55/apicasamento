@@ -1,28 +1,28 @@
-import ListaDePresencas from "../models/ListaDePresencas.js";
+import ListaDePresencasMA from "../../models/mairaeantonio/ListaDePresencasMA.js";
 
 // vamos criar a classe controle para este modelo
-class listaDePresencasController {
+class listaDePresencasMAController {
     //passamos a base estatica com o verbo do CRUD
   //aqui faremos o READ ou gEt
-  static listarPresencas = (req, res) => {
+  static listarPresencasMA = (req, res) => {
     // aqui recebemos o modelo e passamos as function
-    ListaDePresencas.find()
+    ListaDePresencasMA.find()
       .exec()
       //faremos aqui a promisse
-      .then((listadepresencas) => {
-        res.status(200).json(listadepresencas);
+      .then((listadepresencasMA) => {
+        res.status(200).json(listadepresencasMA);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  static cadastrarPresencas = (req, res) => {
-    let presencas = new ListaDePresencas(req.body);
+  static cadastrarPresencasMA = (req, res) => {
+    let presencas = new ListaDePresencasMA(req.body);
     presencas
       .save()
-      .then((listadepresencas) => {
-        res.status(200).json(listadepresencas);
+      .then((listadepresencasma) => {
+        res.status(200).json(listadepresencasma);
       })
       .catch((err) => {
         res
@@ -35,4 +35,4 @@ class listaDePresencasController {
 }
 
 //aqui vamos exportar o controller para aplicação
-export default listaDePresencasController;
+export default listaDePresencasMAController;

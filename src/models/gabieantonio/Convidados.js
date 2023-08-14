@@ -5,6 +5,7 @@ const convidadosSchema = new mongoose.Schema(
   {
     nome: String,
     qtd: Number,
+    email: String,
     confirmado: Boolean,
     pessoas: Array
   }

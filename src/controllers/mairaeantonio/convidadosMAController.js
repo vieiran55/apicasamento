@@ -1,12 +1,12 @@
-import Convidados from "../models/Convidados.js";
+import ConvidadosMA from "../../models/mairaeantonio/ConvidadosMA.js";
 
 // vamos criar a classe controle para este modelo
-class convidadosController {
+class convidadosMAController {
     //passamos a base estatica com o verbo do CRUD
   //aqui faremos o READ ou gEt
-  static listarConvidados = (req, res) => {
+  static listarConvidadosMA = (req, res) => {
     // aqui recebemos o modelo e passamos as function
-    Convidados.find()
+    ConvidadosMA.find()
       .exec()
       //faremos aqui a promisse
       .then((convidados) => {
@@ -17,12 +17,12 @@ class convidadosController {
       });
   };
 
-  static cadastrarConvidados = (req, res) => {
-    let convites = new Convidados(req.body);
+  static cadastrarConvidadosMA = (req, res) => {
+    let convites = new ConvidadosMA(req.body);
     convites
       .save()
-      .then((convidados) => {
-        res.status(200).json(convidados);
+      .then((convidadosma) => {
+        res.status(200).json(convidadosma);
       })
       .catch((err) => {
         res
@@ -34,12 +34,12 @@ class convidadosController {
   };
 
   
-  static atualizarConvidado = (req, res) => {
+  static atualizarConvidadoMA = (req, res) => {
     const id = req.params.id;
 
-    Convidados.findByIdAndUpdate(id, { $set: req.body }, { new: true })
-    .then((convidados) => {
-      if (!convidados) {
+    ConvidadosMA.findByIdAndUpdate(id, { $set: req.body }, { new: true })
+    .then((convidadosma) => {
+      if (!convidadosma) {
         return res.status(404).send({ message: "Registro não encontrado" });
       }
       res.status(200).json({ message: "convidado atualizado com sucesso" });
@@ -51,11 +51,11 @@ class convidadosController {
     });
 }
 
-static excluirConvidado = (req, res) => {
+static excluirConvidadoMA = (req, res) => {
   const id = req.params.id;
 
-  Convidados.findByIdAndDelete(id)
-    .then((convidados) => {
+  ConvidadosMA.findByIdAndDelete(id)
+    .then((convidadosma) => {
       res.status(200).send({ mensagem: "Convidado removido com sucesso " });
     })
     .catch((err) => {
@@ -65,4 +65,4 @@ static excluirConvidado = (req, res) => {
 }
 
 //aqui vamos exportar o controller para aplicação
-export default convidadosController;
+export default convidadosMAController;
